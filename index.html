@@ -7,207 +7,123 @@
 
 <style>
 
-*{
+body{
+font-family: Arial, sans-serif;
 margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
+background:#fafafa;
+color:#333;
 }
 
-body{
-background:#fefaf5;
-color:#2c1810;
+header{
+background:#7b3f00;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+header h1{
+margin:0;
+font-size:36px;
+}
+
+nav{
+background:#333;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-size:18px;
+}
+
+nav a:hover{
+color:#ffd700;
 }
 
 .hero{
-height:50vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-background:
-linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
-url("https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=60");
+background:url("https://images.unsplash.com/photo-1504674900247-0877df9cc836");
 background-size:cover;
-}
-
-.hero h1{
-font-size:2.8rem;
-letter-spacing:3px;
-}
-
-.navbar{
-background:#2c1810;
-padding:1rem;
-display:flex;
-justify-content:space-between;
-align-items:center;
-flex-wrap:wrap;
-}
-
-.logo{
-color:#fff;
-font-weight:bold;
-}
-
-.nav-menu{
-list-style:none;
-display:flex;
-gap:20px;
-}
-
-.nav-menu a{
-color:#fff;
-text-decoration:none;
-}
-
-.cart-icon{
-background:#d4a373;
-padding:6px 12px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.container{
-max-width:1100px;
-margin:auto;
-padding:30px 20px;
-}
-
-.section-title{
-font-size:1.8rem;
+background-position:center;
+color:white;
 text-align:center;
-margin-bottom:20px;
+padding:120px 20px;
 }
 
-.menu-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+.hero h2{
+font-size:40px;
+background:rgba(0,0,0,0.5);
+display:inline-block;
+padding:10px 20px;
+border-radius:8px;
+}
+
+.section{
+padding:50px 20px;
+text-align:center;
+}
+
+.menu-items{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
 gap:20px;
 }
 
-.card{
+.menu-card{
 background:white;
-border-radius:15px;
-overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+padding:20px;
+width:250px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card img{
+.menu-card img{
 width:100%;
+border-radius:8px;
+}
+
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+justify-content:center;
+}
+
+.gallery img{
+width:250px;
 height:180px;
 object-fit:cover;
+border-radius:8px;
 }
 
-.card-body{
-padding:15px;
+.contact{
+background:#eee;
+padding:40px;
 }
 
-.card-title{
-font-weight:bold;
-}
-
-.card-price{
-color:#d4a373;
-font-weight:bold;
-margin:6px 0;
-}
-
-.quantity{
-display:flex;
-align-items:center;
-gap:5px;
-margin:10px 0;
-}
-
-.quantity button{
-width:28px;
-height:28px;
-border:none;
-background:#2c1810;
+.call-btn{
+background:#28a745;
 color:white;
-border-radius:50%;
-cursor:pointer;
-}
-
-.quantity input{
-width:40px;
-text-align:center;
-}
-
-.add-btn{
-width:100%;
-padding:8px;
-background:#2c1810;
-color:white;
-border:none;
-border-radius:10px;
-cursor:pointer;
-}
-
-.cart-overlay{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.5);
-display:none;
-}
-
-.cart{
-position:fixed;
-right:-400px;
-top:0;
-width:350px;
-height:100%;
-background:white;
-transition:.3s;
-display:flex;
-flex-direction:column;
-}
-
-.cart.open{
-right:0;
-}
-
-.cart-header{
-background:#2c1810;
-color:white;
-padding:15px;
-display:flex;
-justify-content:space-between;
-}
-
-.cart-items{
-flex:1;
-overflow:auto;
-padding:10px;
-}
-
-.cart-total{
-padding:15px;
-border-top:1px solid #ddd;
-}
-
-.checkout{
-width:100%;
-padding:10px;
-background:#d4a373;
-border:none;
-border-radius:10px;
-font-weight:bold;
-cursor:pointer;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+font-size:18px;
 }
 
 footer{
-background:#2c1810;
+background:#222;
 color:white;
 text-align:center;
 padding:20px;
 margin-top:40px;
+}
+
+footer a{
+color:#ffd700;
+text-decoration:none;
 }
 
 </style>
@@ -215,196 +131,90 @@ margin-top:40px;
 
 <body>
 
-<div class="hero">
-<div>
-<h1>WEBET BEESU CAFE & RESTAURANT</h1>
-<p>Authentic Ethiopian Cuisine</p>
-</div>
-</div>
+<header>
+<h1>Webet Beesu Cafe & Restaurant</h1>
+<p>Delicious Food • Great Coffee • Peaceful Atmosphere</p>
+</header>
 
-<nav class="navbar">
-
-<div class="logo">☕ Webet Beesu</div>
-
-<ul class="nav-menu">
-<li><a href="#breakfast">Breakfast</a></li>
-<li><a href="#lunch">Lunch</a></li>
-<li><a href="#beverages">Beverages</a></li>
-</ul>
-
-<div class="cart-icon" onclick="toggleCart()">🛒 Cart (<span id="count">0</span>)</div>
-
+<nav>
+<a href="#menu">Menu</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
 </nav>
 
-<div class="container">
+<section class="hero">
+<h2>Welcome to the Taste of Ethiopia</h2>
+</section>
 
-<h2 class="section-title" id="breakfast">Breakfast</h2>
-<div class="menu-grid" id="breakfast-grid"></div>
+<section class="section" id="menu">
 
-<h2 class="section-title" id="lunch">Lunch</h2>
-<div class="menu-grid" id="lunch-grid"></div>
+<h2>Our Popular Menu</h2>
 
-<h2 class="section-title" id="beverages">Beverages</h2>
-<div class="menu-grid" id="beverages-grid"></div>
+<div class="menu-items">
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1604908176997-4317e1c3a2a7">
+<h3>Ethiopian Coffee</h3>
+<p>Fresh traditional coffee</p>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+<h3>Injera & Doro Wat</h3>
+<p>Authentic Ethiopian dish</p>
+</div>
+
+<div class="menu-card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+<h3>Burger & Fries</h3>
+<p>Hot and delicious</p>
+</div>
 
 </div>
+
+</section>
+
+<section class="section" id="gallery">
+
+<h2>Restaurant Gallery</h2>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4">
+<img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5">
+<img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17">
+<img src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9">
+
+</div>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📞 Phone: 0928718820</p>
+
+<p>
+<a class="call-btn" href="tel:0928718820">Call Now</a>
+</p>
+
+<p>Visit Webet Beesu Cafe & Restaurant for delicious food and coffee!</p>
+
+</section>
 
 <footer>
-<p>📍 Addis Ababa Ethiopia</p>
-<p>📞 0928718820</p>
+
+<p>© 2026 Webet Beesu Cafe & Restaurant</p>
+
+<p>
+Developed by  
+<a href="https://peacemakersclub.github.io" target="_blank">
+Peacemakers Club
+</a>
+</p>
+
 </footer>
-
-<div class="cart-overlay" id="overlay" onclick="toggleCart()"></div>
-
-<div class="cart" id="cart">
-
-<div class="cart-header">
-<span>Your Order</span>
-<button onclick="toggleCart()">✕</button>
-</div>
-
-<div class="cart-items" id="cartItems">
-Cart empty
-</div>
-
-<div class="cart-total">
-Total: <b><span id="total">0</span> Birr</b>
-<br><br>
-<button class="checkout">Proceed Payment</button>
-</div>
-
-</div>
-
-<script>
-
-const menu = {
-
-breakfast:[
-{name:"Kinche",price:400,img:"https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=400&q=60"},
-{name:"Chechebsa",price:500,img:"https://images.unsplash.com/photo-1627662114099-5c67e7b6b3e8?auto=format&fit=crop&w=400&q=60"},
-{name:"Scrambled Eggs",price:400,img:"https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=400&q=60"}
-],
-
-lunch:[
-{name:"Shiro",price:400,img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=60"},
-{name:"Tibis",price:900,img:"https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=400&q=60"},
-{name:"Vegetarian Platter",price:700,img:"https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=60"}
-],
-
-beverages:[
-{name:"Coffee",price:100,img:"https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=60"},
-{name:"Macchiato",price:120,img:"https://images.unsplash.com/photo-1485808191679-5f86510681a2?auto=format&fit=crop&w=400&q=60"},
-{name:"Tea",price:70,img:"https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=400&q=60"}
-]
-
-}
-
-let cart=[]
-
-function render(category,id){
-
-const container=document.getElementById(id)
-
-container.innerHTML=menu[category].map((item,i)=>`
-
-<div class="card">
-
-<img src="${item.img}">
-
-<div class="card-body">
-
-<div class="card-title">${item.name}</div>
-
-<div class="card-price">${item.price} Birr</div>
-
-<div class="quantity">
-<button onclick="qty('${category}',${i},-1)">-</button>
-<input id="q-${category}-${i}" value="1">
-<button onclick="qty('${category}',${i},1)">+</button>
-</div>
-
-<button class="add-btn"
-onclick="add('${item.name}',${item.price},'${category}',${i})">
-Add to Cart
-</button>
-
-</div>
-</div>
-
-`).join("")
-
-}
-
-function qty(cat,i,n){
-
-let el=document.getElementById(`q-${cat}-${i}`)
-
-let v=parseInt(el.value)
-
-v+=n
-
-if(v<1)v=1
-
-el.value=v
-
-}
-
-function add(name,price,cat,i){
-
-let qty=parseInt(document.getElementById(`q-${cat}-${i}`).value)
-
-let item=cart.find(x=>x.name===name)
-
-if(item) item.qty+=qty
-else cart.push({name,price,qty})
-
-update()
-
-}
-
-function update(){
-
-let items=document.getElementById("cartItems")
-
-let total=0
-
-items.innerHTML=cart.map((x,i)=>{
-
-total+=x.price*x.qty
-
-return`
-<div>
-${x.name} x${x.qty}
-</div>
-`
-
-}).join("")
-
-document.getElementById("total").innerText=total
-
-document.getElementById("count").innerText=
-cart.reduce((a,b)=>a+b.qty,0)
-
-}
-
-function toggleCart(){
-
-const cartEl=document.getElementById("cart")
-
-const overlay=document.getElementById("overlay")
-
-cartEl.classList.toggle("open")
-
-overlay.style.display=
-cartEl.classList.contains("open")?"block":"none"
-
-}
-
-render("breakfast","breakfast-grid")
-render("lunch","lunch-grid")
-render("beverages","beverages-grid")
-
-</script>
 
 </body>
 </html>
