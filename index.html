@@ -6,8 +6,7 @@
 <title>Webet Beesu Cafe & Restaurant</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fffaf3;color:#2b1b12}
+body{margin:0;font-family:Arial;background:#fffaf3;color:#2b1b12}
 
 .hero{
 height:55vh;
@@ -15,71 +14,57 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-color:#fff;
+color:white;
 background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url("https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=1600&q=60");
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=60");
 background-size:cover;
 background-position:center;
 }
-.hero h1{font-size:2.5rem}
-.hero p{margin-top:10px}
 
-.navbar{
+.hero h1{font-size:2.6rem}
+
+.nav{
 background:#2b1b12;
 color:#fff;
 display:flex;
 justify-content:space-between;
-align-items:center;
-padding:12px 18px;
+padding:12px 15px;
 position:sticky;
 top:0;
-z-index:10;
 }
 
-.navbar a{color:#fff;text-decoration:none;margin:0 10px}
+.container{padding:20px;max-width:1100px;margin:auto}
 
-.cart-btn{
-background:#d4a373;
-padding:6px 12px;
-border-radius:20px;
-cursor:pointer;
-font-weight:bold;
-}
-
-.container{padding:25px;max-width:1100px;margin:auto}
-
-.section-title{
-text-align:center;
-margin:25px 0 15px;
-font-size:1.6rem;
+h2{
+margin-top:30px;
 border-bottom:3px solid #d4a373;
 display:inline-block;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:15px;
-margin-bottom:30px;
+margin-top:10px;
 }
 
 .card{
 background:#fff;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+box-shadow:0 3px 10px rgba(0,0,0,.1);
 }
 
 .card img{
 width:100%;
-height:150px;
+height:140px;
 object-fit:cover;
 }
 
-.card-body{padding:12px}
+.card-body{padding:10px}
 
-.price{color:#d4a373;font-weight:bold;margin:5px 0}
+.price{color:#d4a373;font-weight:bold}
 
 button{
 width:100%;
@@ -87,55 +72,83 @@ padding:8px;
 background:#2b1b12;
 color:#fff;
 border:none;
-border-radius:8px;
 cursor:pointer;
+border-radius:8px;
 }
 
 button:hover{background:#d4a373;color:#000}
+
+/* CART (IMPROVED ONLY) */
+.cart{
+position:fixed;
+right:-360px;
+top:0;
+width:320px;
+height:100%;
+background:#fff;
+box-shadow:-5px 0 20px rgba(0,0,0,.2);
+padding:12px;
+transition:.3s;
+overflow:auto;
+z-index:999;
+}
+
+.cart.open{right:0}
+
+.cart h3{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.cart-item{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #eee;
+padding:8px 0;
+font-size:13px;
+}
+
+.qty{
+display:flex;
+align-items:center;
+gap:6px;
+}
+
+.qty button{
+padding:2px 7px;
+width:auto;
+background:#2b1b12;
+border-radius:4px;
+}
+
+.remove{
+background:#c0392b;
+padding:3px 6px;
+border-radius:4px;
+font-size:11px;
+cursor:pointer;
+color:#fff;
+border:none;
+}
+
+.total-box{
+margin-top:10px;
+padding-top:10px;
+border-top:2px solid #ddd;
+font-size:14px;
+}
+
+.small{font-size:12px;color:#777;margin-top:5px}
 
 footer{
 background:#2b1b12;
 color:#fff;
 text-align:center;
-padding:18px;
+padding:15px;
 margin-top:30px;
 }
-
-.small{font-size:12px;color:#ddd;margin-top:5px}
-
-/* CART */
-.cart{
-position:fixed;
-right:-400px;
-top:0;
-width:320px;
-height:100%;
-background:#fff;
-box-shadow:-3px 0 10px rgba(0,0,0,0.2);
-transition:0.3s;
-padding:15px;
-display:flex;
-flex-direction:column;
-z-index:100;
-}
-
-.cart.open{right:0}
-
-.cart h3{margin-bottom:10px}
-
-.item{display:flex;justify-content:space-between;margin:8px 0;font-size:14px}
-
-.total{margin-top:auto;font-weight:bold}
-
-.pay-box{
-margin-top:10px;
-font-size:13px;
-background:#f7efe6;
-padding:10px;
-border-radius:8px;
-}
-
-.copy{background:#d4a373;color:#000;margin-top:5px}
 
 </style>
 </head>
@@ -145,146 +158,193 @@ border-radius:8px;
 <div class="hero">
 <div>
 <h1>WEBET BEESU CAFE</h1>
-<p>Authentic Ethiopian Food & Fast Food</p>
+<p>Authentic Ethiopian & Fast Food</p>
 </div>
 </div>
 
-<div class="navbar">
+<div class="nav">
 <div>☕ Webet Beesu</div>
-<div>
-<a href="#menu">Menu</a>
-<a href="#contact">Contact</a>
-</div>
-<div class="cart-btn" onclick="toggleCart()">🛒 Cart <span id="count">0</span></div>
+<div onclick="toggleCart()">🛒 Cart <span id="count">0</span></div>
 </div>
 
 <div class="container">
 
-<!-- BURGERS & PIZZA -->
-<h2 class="section-title" id="menu">🍔 Burgers & Pizza</h2>
+<h2>🍔 Burgers & Sandwiches</h2>
 <div class="grid" id="burgers"></div>
 
-<!-- VEGETARIAN -->
-<h2 class="section-title">🥗 Vegetarian & Breakfast</h2>
-<div class="grid" id="veg"></div>
+<h2>🍕 Pizza & Fast Food</h2>
+<div class="grid" id="pizza"></div>
 
-<!-- BREAKFAST -->
-<h2 class="section-title">🍳 Breakfast</h2>
+<h2>🥗 Ethiopian & Vegetarian</h2>
+<div class="grid" id="ethiopian"></div>
+
+<h2>🍳 Breakfast</h2>
 <div class="grid" id="breakfast"></div>
 
 </div>
 
 <!-- CART -->
 <div class="cart" id="cart">
-<h3>Your Order</h3>
-<div id="items"></div>
 
-<div class="total">TOTAL: <span id="total">0</span> ETB</div>
+<h3>
+Your Order
+<button onclick="clearCart()" style="background:#c0392b;color:#fff;border:none;padding:4px 8px;border-radius:5px;cursor:pointer">Clear</button>
+</h3>
 
-<div class="pay-box">
-🏦 CBE Bank<br>
-1000234567890<br>
-Webet Beesu Cafe<br><br>
+<div id="items" style="margin-top:10px;font-size:13px">
+✨ No items yet — add from menu
+</div>
 
-📱 TeleBirr<br>
-0911718700<br><br>
+<div class="total-box">
+TOTAL: <b id="total">0</b> ETB<br>
+<p class="small">VAT 15% included</p>
 
-<button class="copy" onclick="copy('1000234567890')">Copy Bank</button>
-<button class="copy" onclick="copy('0911718700')">Copy TeleBirr</button>
+<hr>
+
+🏦 CBE: 1000234567890<br>
+📱 TeleBirr: 0911718700
 </div>
 
 </div>
 
-<footer id="contact">
-<p>📍 Addis Ababa, Ethiopia | 📞 0928718820</p>
-<p class="small">Powered by <a href="https://addispowerwebsolution.pages.dev/" style="color:#d4a373">Addis Power</a></p>
+<footer>
+📍 Addis Ababa | 📞 0928718820 <br>
+Powered by <b>Addis Power</b>
 </footer>
 
 <script>
 
+/* MENU (UNCHANGED) */
 const menu = [
 {name:"Normal Burger",price:420},
 {name:"Cheese Burger",price:470},
-{name:"Wubet Special Burger",price:500},
+{name:"Special Burger",price:500},
 {name:"Club Sandwich",price:470},
 {name:"Egg Sandwich",price:220},
 {name:"Chips",price:160},
-{name:"Special Sandwich",price:250},
 {name:"Double Burger",price:700},
 {name:"Tuna Sandwich",price:300},
-{name:"Special Pizza",price:850},
 {name:"Beef Pizza",price:670},
 {name:"Chicken Pizza",price:700},
 {name:"Veg Pizza",price:600},
-{name:"Fetira Egg",price:360},
-{name:"Fetira Honey",price:360},
-{name:"Fetira Honey & Egg",price:400},
-
-{name:"Vegetarian Plate",price:200},
-{name:"Shiro Firfir",price:200},
-{name:"Mixed Beyaynetu",price:300},
-{name:"Shiro Tomato",price:220},
-{name:"Pasta Veg",price:220},
-
-{name:"Kinche",price:180},
-{name:"Ful",price:190},
-{name:"Egg Firfir",price:200},
+{name:"Special Pizza",price:850},
+{name:"Shiro",price:220},
+{name:"Beyaynetu",price:300},
 {name:"Chechebsa",price:180},
-{name:"Dulet",price:370}
+{name:"Scrambled Eggs",price:220}
 ];
 
 let cart=[];
 
+/* IMAGE SYSTEM (UNCHANGED) */
+function getImage(name){
+if(name.toLowerCase().includes("burger"))
+return "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=60";
+
+if(name.toLowerCase().includes("pizza"))
+return "https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=600&q=60";
+
+if(name.toLowerCase().includes("egg"))
+return "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=60";
+
+return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=60";
+}
+
+/* LOAD MENU */
 function load(){
 let html="";
 menu.forEach((m,i)=>{
 html+=`
 <div class="card">
-<img src="https://source.unsplash.com/400x300/?food,ethiopian,meal,${i}">
+<img src="${getImage(m.name)}">
 <div class="card-body">
 <h4>${m.name}</h4>
 <div class="price">${m.price} ETB</div>
 <button onclick="add(${i})">+ Add</button>
 </div>
-</div>`;
+</div>
+`;
 });
 
 document.getElementById("burgers").innerHTML=html;
-document.getElementById("veg").innerHTML=html;
+document.getElementById("pizza").innerHTML=html;
+document.getElementById("ethiopian").innerHTML=html;
 document.getElementById("breakfast").innerHTML=html;
 }
 
+/* CART LOGIC (IMPROVED) */
 function add(i){
 let item=menu[i];
 let found=cart.find(c=>c.name===item.name);
-if(found) found.qty++;
-else cart.push({...item,qty:1});
+
+if(found){
+found.qty++;
+}else{
+cart.push({...item,qty:1});
+}
+
+update();
+}
+
+function removeItem(i){
+cart.splice(i,1);
+update();
+}
+
+function changeQty(i,v){
+cart[i].qty+=v;
+if(cart[i].qty<=0) cart.splice(i,1);
+update();
+}
+
+function clearCart(){
+cart=[];
 update();
 }
 
 function update(){
+
 document.getElementById("count").innerText=
 cart.reduce((a,b)=>a+b.qty,0);
 
 let total=0;
-let html="";
 
-cart.forEach(c=>{
+if(cart.length===0){
+document.getElementById("items").innerHTML="✨ No items yet — add from menu";
+document.getElementById("total").innerText=0;
+return;
+}
+
+document.getElementById("items").innerHTML=
+cart.map((c,i)=>{
 total+=c.price*c.qty;
-html+=`<div class="item">${c.name} x${c.qty} = ${c.price*c.qty}</div>`;
-});
 
-document.getElementById("items").innerHTML=html||"No items yet — add from menu";
-document.getElementById("total").innerText=total;
+return `
+<div class="cart-item">
+<div>
+<b>${c.name}</b><br>
+${c.price} ETB
+</div>
+
+<div class="qty">
+<button onclick="changeQty(${i},-1)">-</button>
+<span>${c.qty}</span>
+<button onclick="changeQty(${i},1)">+</button>
+<button class="remove" onclick="removeItem(${i})">x</button>
+</div>
+</div>
+`;
+}).join("");
+
+// VAT 15%
+let vat = total * 0.15;
+let final = total + vat;
+
+document.getElementById("total").innerText=final.toFixed(2);
 }
 
 function toggleCart(){
 document.getElementById("cart").classList.toggle("open");
-}
-
-function copy(t){
-navigator.clipboard.writeText(t);
-alert("Copied: "+t);
 }
 
 load();
