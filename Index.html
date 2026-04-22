@@ -54,113 +54,23 @@
         .copy-btn { background: #2c1810; color: white; border: none; padding: 0.2rem 0.6rem; border-radius: 6px; cursor: pointer; }
         .close-modal { background: #ccc; border: none; padding: 0.6rem; width: 100%; border-radius: 10px; margin-top: 0.8rem; cursor: pointer; }
         .vat-notice { text-align: center; padding: 1rem; background: #f0e4d0; margin-top: 2rem; border-radius: 10px; font-size: 0.85rem; }
-        
         footer { background: #2c1810; color: #f5e6d3; text-align: center; padding: 1.5rem; margin-top: 2rem; }
         .powered-by { margin-top: 0.5rem; font-size: 0.75rem; }
         .powered-by a { color: #d4a373; text-decoration: none; font-weight: 500; }
-        .powered-by a:hover { text-decoration: underline; }
-        
-        /* SERVICES SECTION */
-        .services-section {
-            background: linear-gradient(135deg, #fff6ed 0%, #fef0e3 100%);
-            border-radius: 40px;
-            margin: 2rem auto 2rem auto;
-            padding: 2rem 1.5rem;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-        }
-        .services-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: center;
-            align-items: stretch;
-        }
-        .service-card {
-            background: white;
-            border-radius: 32px;
-            flex: 1;
-            min-width: 240px;
-            max-width: 280px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            border: 1px solid rgba(212, 163, 115, 0.2);
-            text-align: center;
-            padding: 1.8rem 1.2rem;
-        }
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 35px rgba(0,0,0,0.12);
-            border-color: #d4a373;
-        }
-        .service-icon-large {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            display: inline-block;
-        }
-        .service-title {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: #2c1810;
-            margin-bottom: 0.75rem;
-        }
-        .service-desc {
-            color: #5a3e2e;
-            font-size: 0.9rem;
-            line-height: 1.4;
-            margin-bottom: 1rem;
-        }
-        .delivery-badge {
-            background: #e6d5c0;
-            color: #2c1810;
-            font-size: 0.7rem;
-            border-radius: 20px;
-            padding: 0.2rem 0.8rem;
-            display: inline-block;
-            margin-top: 0.5rem;
-        }
-        .service-card.has-image {
-            padding: 0;
-            overflow: hidden;
-        }
-        .service-card.has-image .service-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            background: #f4e9de;
-        }
-        .service-card.has-image .service-body {
-            padding: 1.6rem;
-        }
-        .phone-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
-            margin-top: 0.8rem;
-        }
-        .small-call {
-            background: #2c1810;
-            color: white;
-            border: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .small-call:hover {
-            background: #d4a373;
-            color: #2c1810;
-        }
-        
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2rem; } 
-            .cart-sidebar { width: 100%; right: -100%; } 
-            .navbar { flex-direction: column; gap: 0.5rem; }
-            .services-grid { gap: 1.2rem; }
-        }
+        .services-section { background: linear-gradient(135deg, #fff6ed 0%, #fef0e3 100%); border-radius: 40px; margin: 2rem auto; padding: 2rem 1.5rem; }
+        .services-grid { display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; }
+        .service-card { background: white; border-radius: 32px; flex: 1; min-width: 240px; max-width: 280px; text-align: center; padding: 1.8rem 1.2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid rgba(212,163,115,0.2); transition: 0.3s; }
+        .service-card:hover { transform: translateY(-8px); }
+        .service-icon-large { font-size: 4rem; margin-bottom: 1rem; }
+        .service-title { font-size: 1.5rem; font-weight: 800; color: #2c1810; }
+        .service-desc { color: #5a3e2e; font-size: 0.9rem; margin-bottom: 1rem; }
+        .service-card.has-image { padding: 0; overflow: hidden; }
+        .service-card.has-image .service-img { width: 100%; height: 180px; object-fit: cover; }
+        .service-card.has-image .service-body { padding: 1.6rem; }
+        .phone-group { display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.8rem; }
+        .small-call { background: #2c1810; color: white; padding: 0.4rem 0.8rem; border-radius: 30px; font-size: 0.75rem; text-decoration: none; display: inline-block; }
+        .small-call:hover { background: #d4a373; color: #2c1810; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .cart-sidebar { width: 100%; right: -100%; } .navbar { flex-direction: column; gap: 0.5rem; } }
     </style>
 </head>
 <body>
@@ -186,66 +96,45 @@
 <div class="container">
     <div class="section-header"><h2 class="section-title" id="breakfast">☀️ Breakfast</h2></div>
     <div class="menu-grid" id="breakfast-grid"></div>
-
     <div class="section-header"><h2 class="section-title" id="lunch">🍛 Lunch</h2></div>
     <div class="menu-grid" id="lunch-grid"></div>
-
     <div class="section-header"><h2 class="section-title" id="sides">🌿 Side Dishes</h2></div>
     <div class="menu-grid" id="sides-grid"></div>
-
     <div class="section-header"><h2 class="section-title" id="beverages">🥤 Beverages</h2></div>
     <div class="menu-grid" id="beverages-grid"></div>
-
-    <div class="vat-notice">
-        ⚠️ Prices do not include 15% VAT. All dishes prepared with 100% Teff, 100% Niger seed oil, 100% homemade clarified butter.
-    </div>
+    <div class="vat-notice">⚠️ Prices do not include 15% VAT. All dishes prepared with 100% Teff, 100% Niger seed oil, 100% homemade clarified butter.</div>
 </div>
 
-<!-- SERVICES SECTION - with HOTLINE buttons (no forms) -->
-<div class="services-section" id="services">
-    <div class="section-header">
-        <h2 class="section-title" style="border-bottom-color:#b88b5a;">✨ Our Services</h2>
-    </div>
+<div class="services-section">
+    <div class="section-header"><h2 class="section-title">✨ Our Services</h2></div>
     <div class="services-grid">
-        <!-- Delivery Card -->
         <div class="service-card has-image">
-            <img class="service-img" src="https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/51389d3c5c6af4304905f4e11e1a5aad054b2eb6/tedlas-cafe-and-restaurant-delivery.png?raw=true" alt="Delivery" onerror="this.src='https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=400'">
+            <img class="service-img" src="https://images.unsplash.com/photo-1601924582970-9238bcb495d9?w=400" alt="Delivery">
             <div class="service-body">
                 <div class="service-icon-large">🚚</div>
                 <div class="service-title">Fast Delivery</div>
                 <div class="service-desc">Hot & fresh Ethiopian dishes delivered to your doorstep. Free delivery within 5km.</div>
-                <div class="delivery-badge">⏱️ 30-45 min • Free tracking</div>
             </div>
         </div>
-        
-        <!-- Pickup Card - NO image, NO badge -->
         <div class="service-card">
             <div class="service-icon-large">🏪</div>
             <div class="service-title">Easy Pickup</div>
-            <div class="service-desc">Order online and pick up at our restaurant. Skip the line, just grab your meal and enjoy.</div>
+            <div class="service-desc">Order online and pick up at our restaurant. Skip the line.</div>
         </div>
-        
-        <!-- Table Reservation - HOTLINE button with updated numbers (0928718820) -->
         <div class="service-card has-image">
-            <img class="service-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=500" alt="Table" onerror="this.src='https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400'">
+            <img class="service-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400" alt="Table">
             <div class="service-body">
                 <div class="service-icon-large">🍽️</div>
                 <div class="service-title">Table Reservation</div>
-                <div class="service-desc">Reserve your cozy table for family dinner, business lunch or celebrations.</div>
-                <div class="phone-group">
-                    <a href="tel:0928718820" class="small-call">📞 Call 0928718820</a>
-                </div>
+                <div class="service-desc">Reserve your cozy table for family dinner or celebrations.</div>
+                <div class="phone-group"><a href="tel:0928718820" class="small-call">📞 Call 0928718820</a></div>
             </div>
         </div>
-        
-        <!-- Frontyard Space - changed from Backyard to Frontyard, updated phone numbers -->
         <div class="service-card">
             <div class="service-icon-large">🌿</div>
             <div class="service-title">Frontyard Space</div>
-            <div class="service-desc">Enjoy our peaceful frontyard garden with traditional seating. Perfect for coffee ceremonies and events.</div>
-            <div class="phone-group">
-                <a href="tel:0928718820" class="small-call">📞 Call 0928718820</a>
-            </div>
+            <div class="service-desc">Enjoy our peaceful frontyard garden with traditional seating.</div>
+            <div class="phone-group"><a href="tel:0928718820" class="small-call">📞 Call 0928718820</a></div>
         </div>
     </div>
 </div>
@@ -253,7 +142,7 @@
 <footer>
     <p>Webet Beesu Cafe & Restaurant | Authentic Ethiopian Cuisine</p>
     <p>📍 Addis Ababa, Ethiopia | 📞 0928718820</p>
-    <div class="powered-by">Powered by <a href="https://addispowerwebsolution.pages.dev/" target="_blank">Addis Power Web Solution</a> – AI & Web Solutions</div>
+    <div class="powered-by">Powered by <a href="https://addispowerwebsolution.pages.dev/" target="_blank">Addis Power Web Solution</a></div>
 </footer>
 
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
@@ -272,76 +161,40 @@
 </div>
 
 <script>
-    // ==================== ALL UPDATED IMAGES WITH CORRECT URLS ====================
-    const images = {
-        // Breakfast
-        "kinche-butter": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-homemade-butte.jpg?raw=true",
-        "kinche-olive": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-with-olive-oil.jpg?raw=true",
-        "kinche-enkulal": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/kinche-be-enkualale.jpg?raw=true",
-        "scrambled-eggs": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/Scrambled%20Eggs.jpg?raw=true",
-        "scrambled-beef": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/9ffaa09a08b06ef9ed353489463f62045f7b434e/scrambled-egg-with-beef%20.jpeg?raw=true",
-        "chechebsa": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/chechebsa.jpg?raw=true",
-        "dirkosh": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dirkosh-firfir.jpg?raw=true",
-        
-        // Lunch
-        "dinch-siga": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/dinch-wote-be-siga.jpg?raw=true",
-        "yechikina": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/yechikina-tibis.jpg?raw=true",
-        "tibis-firfir": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tibis-firfir.jpg?raw=true",
-        "fasting-plater": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/fasting-plater-vegetarian.jpg?raw=true",
-        "shiro": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/shiro.jpg?raw=true",
-        "mahberawi": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/100ab58ead68ddf9ec7c4863ca9874e190164b38/mahberawi-yefisk%20(2).jpg?raw=true",
-        
-        // Sides
-        "karya": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3fe38866025f7ba14f64fe12d7ee07e8a934c758/karya-sineg.PNG?raw=true",
-        "dinich-kitf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/ba6cccc5a711a35068f017ec29ee224a5038857b/dinich-kitef.jpg?raw=true",
-        "timatim": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/timatim-kurit.jpg?raw=true",
-        "ayib": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/ayib-bemitmita.jpg?raw=true",
-        "yesuf": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/yesuf-fitfit.jpg?raw=true",
-        
-        // Beverages - UPDATED COFFEE IMAGE
-        "traditional-coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/b59e576cd5cbeffb2af260956943a478872f367e/traditional-coffee.jpg?raw=true",
-        "coffee": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/2b30a694f2a2979a63d4b905f6cc34bd591dc05d/coffee.jpeg?raw=true",
-        "macchiato": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/d00ec49d4ef545e45a7d4482aa51ba05c44b075d/macchiato.jpg?raw=true",
-        "tea": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/tea-black-green-ginger.jpg?raw=true",
-        "water": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/water.jpg?raw=true",
-        "soft-drinks": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/84baf76a9dc4bf0fbdc67e7ad80aaef937b6784f/soft-drinks.jpg?raw=true",
-        "beer": "https://github.com/Peacemakersclub/tedlas-cafe-menu/blob/3016168188358f5c7081e9491bc39acf71bfbcc1/beer.jpg?raw=true"
-    };
-
-    // ==================== UPDATED MENU DATA WITH CORRECT PRICES ====================
+    // Menu Data with working images from reliable sources
     const menuData = {
         breakfast: [
-            { name: "Kinche (with homemade butter)", price: 400, desc: "Steel cut oats, egg, homemade butter", img: images["kinche-butter"] },
-            { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: images["kinche-olive"] },
-            { name: "Kinche be Enkulal", price: 500, desc: "Steel cut oats with egg, homemade butter & special spices", img: images["kinche-enkulal"] },
-            { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: images["scrambled-eggs"] },
-            { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: images["scrambled-beef"] },
-            { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: images["chechebsa"] },
-            { name: "Dirkosh Firfir", price: 700, desc: "Dirkosh spiced stew with homemade butter", img: images["dirkosh"] }
+            { name: "Kinche (with homemade butter)", price: 400, desc: "Steel cut oats, egg, homemade butter", img: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400" },
+            { name: "Kinche (with olive oil)", price: 400, desc: "Steel cut oats with olive oil", img: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?w=400" },
+            { name: "Kinche be Enkulal", price: 500, desc: "Steel cut oats with egg, homemade butter & special spices", img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400" },
+            { name: "Scrambled Eggs", price: 400, desc: "Eggs with onion, tomato, jalapenos", img: "https://images.unsplash.com/photo-1510693206972-df098062cb71?w=400" },
+            { name: "Scrambled Eggs with Minced Meat", price: 500, desc: "Eggs, minced meat, onion, tomato, jalapenos", img: "https://images.unsplash.com/photo-1525351486363-ef0f2498ae18?w=400" },
+            { name: "Chechebsa", price: 500, desc: "Red teff, wheat flour, spiced butter, yogurt & honey", img: "https://images.unsplash.com/photo-1627662114099-5c67e7b6b3e8?w=400" },
+            { name: "Dirkosh Firfir", price: 700, desc: "Dirkosh spiced stew with homemade butter", img: "https://images.unsplash.com/photo-1627662114099-5c67e7b6b3e8?w=400" }
         ],
         lunch: [
-            { name: "Dinch be Siga", price: 700, desc: "Potato, beef meat, spiced stew, homemade butter", img: images["dinch-siga"] },
-            { name: "Yechikina Tibis", price: 900, desc: "Stir-fried beef with tomato, onion, jalapenos", img: images["yechikina"] },
-            { name: "Tibis Firfir", price: 700, desc: "Injera with beef filet, onion, tomato, jalapenos, chili curry", img: images["tibis-firfir"] },
-            { name: "Fasting Plater (Vegetarian)", price: 700, desc: "Lentils, chickpea, cabbage, sunflower seeds, tomato salad", img: images["fasting-plater"] },
-            { name: "Shiro", price: 400, desc: "Chickpea flour stew", img: images["shiro"] },
-            { name: "Mahberawi Yefisk", price: 1600, desc: "Grand mixed platter: combination of Tibs, Kitfo, Shiro, Gomen, Ayib & fresh salad. Serves 2-3 people.", img: images["mahberawi"] }
+            { name: "Dinch be Siga", price: 700, desc: "Potato, beef meat, spiced stew, homemade butter", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" },
+            { name: "Yechikina Tibis", price: 900, desc: "Stir-fried beef with tomato, onion, jalapenos", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" },
+            { name: "Tibis Firfir", price: 700, desc: "Injera with beef filet, onion, tomato, jalapenos", img: "https://images.unsplash.com/photo-1627662114099-5c67e7b6b3e8?w=400" },
+            { name: "Fasting Plater (Vegetarian)", price: 700, desc: "Lentils, chickpea, cabbage, sunflower seeds", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" },
+            { name: "Shiro", price: 400, desc: "Chickpea flour stew", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" },
+            { name: "Mahberawi Yefisk", price: 1600, desc: "Grand mixed platter. Serves 2-3 people.", img: "https://images.unsplash.com/photo-1544025162-d76694265947?w=400" }
         ],
         sides: [
-            { name: "Karya Singe (3 pieces)", price: 200, desc: "Ethiopian potato, fried onion, jalapenos", img: images["karya"] },
-            { name: "Dinich Kitf", price: 300, desc: "Ethiopian potato, fried onion, jalapenos", img: images["dinich-kitf"] },
-            { name: "Tomato Salad (Timatim Kurit)", price: 300, desc: "Tomato salad, onion, jalapenos", img: images["timatim"] },
-            { name: "Ayib Bemitmita", price: 400, desc: "Cheese with spiced homemade butter", img: images["ayib"] },
-            { name: "Yesuf Fitfit", price: 400, desc: "Sunflower seed milk, tomato salad, jalapenos with sauce", img: images["yesuf"] }
+            { name: "Karya Singe (3 pieces)", price: 200, desc: "Ethiopian potato, fried onion, jalapenos", img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400" },
+            { name: "Dinich Kitf", price: 300, desc: "Ethiopian potato, fried onion, jalapenos", img: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=400" },
+            { name: "Tomato Salad", price: 300, desc: "Tomato salad, onion, jalapenos", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" },
+            { name: "Ayib Bemitmita", price: 400, desc: "Cheese with spiced homemade butter", img: "https://images.unsplash.com/photo-1559561853-08451507cbe7?w=400" },
+            { name: "Yesuf Fitfit", price: 400, desc: "Sunflower seed milk, tomato salad, jalapenos", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400" }
         ],
         beverages: [
-            { name: "Traditional Coffee", price: 70, desc: "Ethiopian coffee ceremony style", img: images["traditional-coffee"] },
-            { name: "Coffee", price: 100, desc: "Freshly brewed coffee", img: images["coffee"] },
-            { name: "Macchiato", price: 120, desc: "Espresso with a touch of steamed milk", img: images["macchiato"] },
-            { name: "Tea", price: 70, desc: "Black, green, or ginger tea", img: images["tea"] },
-            { name: "Water (1 Liter)", price: 80, desc: "Pure bottled water", img: images["water"] },
-            { name: "Soft Drinks", price: 80, desc: "Coke, Sprite, Fanta, and more", img: images["soft-drinks"] },
-            { name: "Beer", price: 140, desc: "Cold and refreshing local beer", img: images["beer"] }
+            { name: "Traditional Coffee", price: 70, desc: "Ethiopian coffee ceremony style", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400" },
+            { name: "Coffee", price: 100, desc: "Freshly brewed coffee", img: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400" },
+            { name: "Macchiato", price: 120, desc: "Espresso with steamed milk", img: "https://images.unsplash.com/photo-1485808191679-5f86510681a2?w=400" },
+            { name: "Tea", price: 70, desc: "Black, green, or ginger tea", img: "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?w=400" },
+            { name: "Water (1 Liter)", price: 80, desc: "Pure bottled water", img: "https://images.unsplash.com/photo-1616118132534-38125b25e6c4?w=400" },
+            { name: "Soft Drinks", price: 80, desc: "Coke, Sprite, Fanta", img: "https://images.unsplash.com/photo-1581006852262-e4307cf6283a?w=400" },
+            { name: "Beer", price: 140, desc: "Cold and refreshing local beer", img: "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=400" }
         ]
     };
 
@@ -350,7 +203,7 @@
     function renderMenu(category, elementId) {
         const container = document.getElementById(elementId);
         if (!container) return;
-        container.innerHTML = menuData[category].map(item => `
+        container.innerHTML = menuData[category].map((item, idx) => `
             <div class="card">
                 <img class="card-img" src="${item.img}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400'">
                 <div class="card-body">
@@ -384,19 +237,21 @@
     }
 
     function updateCart() {
-        const cartCount = document.getElementById('cart-count');
+        document.getElementById('cart-count').innerText = cart.reduce((s, i) => s + i.qty, 0);
         const cartItemsDiv = document.getElementById('cartItems');
         const cartTotalSpan = document.getElementById('cartTotal');
-        let totalItems = 0, totalPrice = 0;
-        cart.forEach(item => { totalItems += item.qty; totalPrice += item.price * item.qty; });
-        cartCount.innerText = totalItems;
-        if (cart.length === 0) { cartItemsDiv.innerHTML = '<p style="text-align:center; color:#999;">Cart is empty</p>'; cartTotalSpan.innerText = '0'; return; }
+        let totalPrice = cart.reduce((s, i) => s + (i.price * i.qty), 0);
+        if (cart.length === 0) {
+            cartItemsDiv.innerHTML = '<p style="text-align:center; color:#999;">Cart is empty</p>';
+            cartTotalSpan.innerText = '0';
+            return;
+        }
         cartItemsDiv.innerHTML = cart.map((item, idx) => `
             <div class="cart-item">
-                <div><div class="cart-item-name">${item.name}</div><div class="cart-item-price">${item.price} BIRR each</div></div>
+                <div><strong>${item.name}</strong><br>${item.price} BIRR each</div>
                 <div class="cart-item-controls">
                     <button class="cart-qty-btn" onclick="updateCartQty(${idx}, -1)">-</button>
-                    <span class="cart-qty">${item.qty}</span>
+                    <span>${item.qty}</span>
                     <button class="cart-qty-btn" onclick="updateCartQty(${idx}, 1)">+</button>
                     <button class="cart-qty-btn" onclick="removeCartItem(${idx})" style="background:#c0392b;">✕</button>
                 </div>
@@ -413,20 +268,22 @@
     }
 
     function removeCartItem(idx) { cart.splice(idx, 1); updateCart(); }
-    function toggleCart() { document.getElementById('cartSidebar').classList.toggle('open'); document.getElementById('cartOverlay').style.display = document.getElementById('cartSidebar').classList.contains('open') ? 'block' : 'none'; }
+    function toggleCart() { 
+        document.getElementById('cartSidebar').classList.toggle('open'); 
+        document.getElementById('cartOverlay').style.display = document.getElementById('cartSidebar').classList.contains('open') ? 'block' : 'none';
+    }
     function showPaymentModal() { if (cart.length === 0) { alert('Cart is empty'); return; } document.getElementById('paymentModal').style.display = 'block'; }
     function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; document.getElementById('paymentDetails').style.display = 'none'; }
     
     function selectPayment(method) {
         let total = cart.reduce((s, i) => s + (i.price * i.qty), 0);
-        let vat = total * 0.15;
-        let grandTotal = total + vat;
+        let grandTotal = total + (total * 0.15);
         let orderSummary = cart.map(i => `${i.name} x${i.qty} - ${i.price * i.qty} BIRR`).join('\n');
         let detailsDiv = document.getElementById('paymentDetails');
         if (method === 'telebirr') {
-            detailsDiv.innerHTML = `<strong>📱 Telebirr Payment</strong><br><br>📞 Number: <strong>0928718820</strong><br>👤 Name: <strong>Webet Beesu Cafe</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('0928718820')">Copy Number</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
+            detailsDiv.innerHTML = `<strong>📱 Telebirr Payment</strong><br><br>📞 Number: <strong>0928718820</strong><br>👤 Name: <strong>Webet Beesu Cafe</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br><button class="copy-btn" onclick="copyToClipboard('0928718820')">Copy Number</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
         } else {
-            detailsDiv.innerHTML = `<strong>🏦 Bank Transfer</strong><br><br>🏛️ Bank: <strong>Commercial Bank of Ethiopia</strong><br>🔢 Account: <strong>1000730659214</strong><br>👤 Name: <strong>Webet Beesu Cafe & Restaurant</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br>📋 Order:<br><pre style="font-size:0.7rem;">${orderSummary}</pre><br><button class="copy-btn" onclick="copyToClipboard('1000730659214')">Copy Account</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
+            detailsDiv.innerHTML = `<strong>🏦 Bank Transfer</strong><br><br>🏛️ Bank: <strong>Commercial Bank of Ethiopia</strong><br>🔢 Account: <strong>1000730659214</strong><br>👤 Name: <strong>Webet Beesu Cafe</strong><br><br><strong>Total: ${grandTotal} BIRR</strong> (incl. VAT)<br><br><button class="copy-btn" onclick="copyToClipboard('1000730659214')">Copy Account</button><button class="checkout-btn" style="margin-top:0.8rem;" onclick="confirmOrder()">✅ Confirm Order</button>`;
         }
         detailsDiv.style.display = 'block';
     }
