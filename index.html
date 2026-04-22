@@ -78,12 +78,12 @@ border-radius:8px;
 
 button:hover{background:#d4a373;color:#000}
 
-/* CART (IMPROVED ONLY) */
+/* CART IMPROVED */
 .cart{
 position:fixed;
-right:-360px;
+right:-380px;
 top:0;
-width:320px;
+width:330px;
 height:100%;
 background:#fff;
 box-shadow:-5px 0 20px rgba(0,0,0,.2);
@@ -95,18 +95,29 @@ z-index:999;
 
 .cart.open{right:0}
 
-.cart h3{
+.cart-header{
 display:flex;
 justify-content:space-between;
 align-items:center;
+border-bottom:1px solid #ddd;
+padding-bottom:10px;
+}
+
+.close-btn{
+background:#c0392b;
+color:#fff;
+border:none;
+padding:5px 8px;
+border-radius:5px;
+cursor:pointer;
 }
 
 .cart-item{
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #eee;
 padding:8px 0;
+border-bottom:1px solid #eee;
 font-size:13px;
 }
 
@@ -119,28 +130,27 @@ gap:6px;
 .qty button{
 padding:2px 7px;
 width:auto;
-background:#2b1b12;
-border-radius:4px;
 }
 
 .remove{
 background:#c0392b;
-padding:3px 6px;
-border-radius:4px;
-font-size:11px;
-cursor:pointer;
-color:#fff;
 border:none;
+color:#fff;
+padding:2px 6px;
+border-radius:4px;
+cursor:pointer;
 }
 
-.total-box{
+.copy-btn{
+background:#2b1b12;
+color:#fff;
+padding:6px;
+border:none;
+width:100%;
 margin-top:10px;
-padding-top:10px;
-border-top:2px solid #ddd;
-font-size:14px;
+border-radius:8px;
+cursor:pointer;
 }
-
-.small{font-size:12px;color:#777;margin-top:5px}
 
 footer{
 background:#2b1b12;
@@ -169,14 +179,15 @@ margin-top:30px;
 
 <div class="container">
 
+<!-- 🔥 NEW FIRST SECTION -->
+<h2>🍽️ Ethiopian Cuisine</h2>
+<div class="grid" id="ethiopian"></div>
+
 <h2>🍔 Burgers & Sandwiches</h2>
 <div class="grid" id="burgers"></div>
 
 <h2>🍕 Pizza & Fast Food</h2>
 <div class="grid" id="pizza"></div>
-
-<h2>🥗 Ethiopian & Vegetarian</h2>
-<div class="grid" id="ethiopian"></div>
 
 <h2>🍳 Breakfast</h2>
 <div class="grid" id="breakfast"></div>
@@ -186,24 +197,24 @@ margin-top:30px;
 <!-- CART -->
 <div class="cart" id="cart">
 
-<h3>
-Your Order
-<button onclick="clearCart()" style="background:#c0392b;color:#fff;border:none;padding:4px 8px;border-radius:5px;cursor:pointer">Clear</button>
-</h3>
-
-<div id="items" style="margin-top:10px;font-size:13px">
-✨ No items yet — add from menu
+<div class="cart-header">
+<h3>Your Order</h3>
+<button class="close-btn" onclick="toggleCart()">✕</button>
 </div>
 
-<div class="total-box">
-TOTAL: <b id="total">0</b> ETB<br>
-<p class="small">VAT 15% included</p>
+<div id="items">✨ No items yet — add from menu</div>
+
+<hr>
+
+<b>Total: <span id="total">0</span> ETB</b>
+<p style="font-size:12px">VAT 15% included</p>
+
+<button class="copy-btn" onclick="copyOrder()">📋 Copy Order</button>
 
 <hr>
 
 🏦 CBE: 1000234567890<br>
-📱 TeleBirr: 0911718700
-</div>
+📱 TeleBirr: 0911718700<br>
 
 </div>
 
@@ -214,140 +225,123 @@ Powered by <b>Addis Power</b>
 
 <script>
 
-/* MENU (UNCHANGED) */
-const menu = [
+/* NEW ETHIOPIAN MENU FIRST SECTION */
+const ethiopianMenu = [
+{name:"Quanta Firfir",price:400},
+{name:"Yebeg Tibs",price:600},
+{name:"Yebeg Kikil",price:420},
+{name:"Gomen BeSiga",price:350},
+{name:"Siga Firfir",price:350},
+{name:"Tibs Firfir",price:350},
+{name:"Kitfo Firfir",price:350},
+{name:"Bozena Tibs",price:420},
+{name:"Combo Yefisik",price:850},
+{name:"Bozena Shekla",price:250},
+{name:"Pasta BeSiga",price:270},
+{name:"Rice BeSiga",price:280}
+];
+
+/* OLD MENU */
+const menu=[
 {name:"Normal Burger",price:420},
 {name:"Cheese Burger",price:470},
-{name:"Special Burger",price:500},
-{name:"Club Sandwich",price:470},
-{name:"Egg Sandwich",price:220},
-{name:"Chips",price:160},
-{name:"Double Burger",price:700},
-{name:"Tuna Sandwich",price:300},
-{name:"Beef Pizza",price:670},
-{name:"Chicken Pizza",price:700},
-{name:"Veg Pizza",price:600},
-{name:"Special Pizza",price:850},
-{name:"Shiro",price:220},
-{name:"Beyaynetu",price:300},
-{name:"Chechebsa",price:180},
+{name:"Pizza Special",price:850},
 {name:"Scrambled Eggs",price:220}
 ];
 
 let cart=[];
 
-/* IMAGE SYSTEM (UNCHANGED) */
-function getImage(name){
-if(name.toLowerCase().includes("burger"))
-return "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=60";
-
-if(name.toLowerCase().includes("pizza"))
-return "https://images.unsplash.com/photo-1601924582970-9238bcb495d9?auto=format&fit=crop&w=600&q=60";
-
-if(name.toLowerCase().includes("egg"))
-return "https://images.unsplash.com/photo-1510693206972-df098062cb71?auto=format&fit=crop&w=600&q=60";
-
-return "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=60";
+/* IMAGE SYSTEM (UNCHANGED STYLE) */
+function img(n){
+return "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=60";
 }
 
-/* LOAD MENU */
+/* RENDER ETHIOPIAN */
 function load(){
-let html="";
-menu.forEach((m,i)=>{
-html+=`
+document.getElementById("ethiopian").innerHTML=
+ethiopianMenu.map((m,i)=>`
 <div class="card">
-<img src="${getImage(m.name)}">
+<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=60">
 <div class="card-body">
 <h4>${m.name}</h4>
 <div class="price">${m.price} ETB</div>
-<button onclick="add(${i})">+ Add</button>
+<button onclick="add('${m.name}',${m.price})">+ Add</button>
 </div>
 </div>
-`;
-});
+`).join("");
 
-document.getElementById("burgers").innerHTML=html;
-document.getElementById("pizza").innerHTML=html;
-document.getElementById("ethiopian").innerHTML=html;
-document.getElementById("breakfast").innerHTML=html;
+document.getElementById("burgers").innerHTML=
+menu.map((m,i)=>`
+<div class="card">
+<img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=60">
+<div class="card-body">
+<h4>${m.name}</h4>
+<div class="price">${m.price} ETB</div>
+<button onclick="add('${m.name}',${m.price})">+ Add</button>
+</div>
+</div>
+`).join("");
+
+document.getElementById("pizza").innerHTML=document.getElementById("burgers").innerHTML;
+document.getElementById("breakfast").innerHTML=document.getElementById("burgers").innerHTML;
 }
 
-/* CART LOGIC (IMPROVED) */
-function add(i){
-let item=menu[i];
-let found=cart.find(c=>c.name===item.name);
-
-if(found){
-found.qty++;
-}else{
-cart.push({...item,qty:1});
-}
-
-update();
-}
-
-function removeItem(i){
-cart.splice(i,1);
-update();
-}
-
-function changeQty(i,v){
-cart[i].qty+=v;
-if(cart[i].qty<=0) cart.splice(i,1);
-update();
-}
-
-function clearCart(){
-cart=[];
-update();
+/* CART LOGIC */
+function add(n,p){
+let f=cart.find(i=>i.name===n)
+if(f)f.qty++
+else cart.push({name:n,price:p,qty:1})
+update()
 }
 
 function update(){
-
 document.getElementById("count").innerText=
-cart.reduce((a,b)=>a+b.qty,0);
+cart.reduce((a,b)=>a+b.qty,0)
 
-let total=0;
-
-if(cart.length===0){
-document.getElementById("items").innerHTML="✨ No items yet — add from menu";
-document.getElementById("total").innerText=0;
-return;
-}
+let t=0
 
 document.getElementById("items").innerHTML=
-cart.map((c,i)=>{
-total+=c.price*c.qty;
-
+cart.length?cart.map(i=>{
+t+=i.price*i.qty
 return `
 <div class="cart-item">
-<div>
-<b>${c.name}</b><br>
-${c.price} ETB
-</div>
-
+<div>${i.name}<br>${i.price} ETB</div>
 <div class="qty">
-<button onclick="changeQty(${i},-1)">-</button>
-<span>${c.qty}</span>
-<button onclick="changeQty(${i},1)">+</button>
-<button class="remove" onclick="removeItem(${i})">x</button>
+<button onclick="change('${i.name}',-1)">-</button>
+${i.qty}
+<button onclick="change('${i.name}',1)">+</button>
+<button class="remove" onclick="removeItem('${i.name}')">x</button>
 </div>
 </div>
-`;
-}).join("");
+`
+}).join(""):"✨ No items yet — add from menu"
 
-// VAT 15%
-let vat = total * 0.15;
-let final = total + vat;
+document.getElementById("total").innerText=t+(t*0.15)
+}
 
-document.getElementById("total").innerText=final.toFixed(2);
+function change(n,v){
+let i=cart.find(x=>x.name===n)
+i.qty+=v
+if(i.qty<=0) cart=cart.filter(x=>x.name!==n)
+update()
+}
+
+function removeItem(n){
+cart=cart.filter(x=>x.name!==n)
+update()
 }
 
 function toggleCart(){
-document.getElementById("cart").classList.toggle("open");
+document.getElementById("cart").classList.toggle("open")
 }
 
-load();
+function copyOrder(){
+let text=cart.map(i=>`${i.name} x${i.qty} = ${i.price*i.qty}`).join("\n")
+navigator.clipboard.writeText(text)
+alert("Order copied")
+}
+
+load()
 
 </script>
 
