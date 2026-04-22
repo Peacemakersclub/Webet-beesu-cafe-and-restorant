@@ -8,6 +8,7 @@
 <style>
 body{margin:0;font-family:Arial;background:#fffaf3;color:#2b1b12}
 
+/* HERO */
 .hero{
 height:55vh;
 display:flex;
@@ -23,6 +24,7 @@ background-position:center;
 }
 .hero h1{font-size:2.6rem}
 
+/* NAV */
 .nav{
 background:#2b1b12;
 color:#fff;
@@ -31,10 +33,10 @@ justify-content:space-between;
 padding:12px 15px;
 position:sticky;
 top:0;
-z-index:10;
 cursor:pointer;
 }
 
+/* CONTAINER */
 .container{padding:20px;max-width:1100px;margin:auto}
 
 h2{
@@ -43,6 +45,7 @@ border-bottom:3px solid #d4a373;
 display:inline-block;
 }
 
+/* MENU */
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -86,7 +89,6 @@ top:0;left:0;
 width:100%;height:100%;
 background:rgba(0,0,0,.5);
 display:none;
-z-index:50;
 }
 
 .cart{
@@ -96,11 +98,10 @@ top:0;
 width:340px;
 height:100%;
 background:#fff;
-box-shadow:-3px 0 10px rgba(0,0,0,.2);
 padding:15px;
 transition:.3s;
 overflow:auto;
-z-index:100;
+box-shadow:-3px 0 10px rgba(0,0,0,.2);
 }
 
 .cart.open{right:0}
@@ -110,20 +111,19 @@ background:red;
 color:#fff;
 padding:8px;
 border:none;
-cursor:pointer;
 width:100%;
 margin-top:10px;
+cursor:pointer;
 }
 
 .copy{
 background:#d4a373;
-color:#000;
-padding:6px;
 border:none;
+padding:6px;
+width:100%;
 margin-top:5px;
 cursor:pointer;
 border-radius:5px;
-width:100%;
 }
 
 /* SERVICES */
@@ -136,12 +136,21 @@ margin-top:40px;
 
 .service{
 background:#fff;
-padding:15px;
 border-radius:12px;
+overflow:hidden;
 box-shadow:0 3px 10px rgba(0,0,0,.1);
 text-align:center;
 }
 
+.service img{
+width:100%;
+height:130px;
+object-fit:cover;
+}
+
+.service div{padding:10px}
+
+/* FOOTER */
 footer{
 background:#2b1b12;
 color:#fff;
@@ -150,12 +159,17 @@ padding:15px;
 margin-top:30px;
 }
 
-.small{font-size:12px;color:#ddd}
+footer a{
+color:#d4a373;
+text-decoration:none;
+font-weight:bold;
+}
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
 <div>
 <h1>WEBET BEESU CAFE</h1>
@@ -163,6 +177,7 @@ margin-top:30px;
 </div>
 </div>
 
+<!-- NAV -->
 <div class="nav">
 <div>☕ Webet Beesu</div>
 <div onclick="toggleCart()">🛒 Cart <span id="count">0</span></div>
@@ -170,19 +185,15 @@ margin-top:30px;
 
 <div class="container">
 
-<!-- ETHIOPIAN FIRST -->
 <h2>🍛 Ethiopian Cuisine</h2>
 <div class="grid" id="ethiopian"></div>
 
-<!-- BURGERS -->
 <h2>🍔 Burgers & Sandwiches</h2>
 <div class="grid" id="burgers"></div>
 
-<!-- PIZZA -->
 <h2>🍕 Pizza & Fast Food</h2>
 <div class="grid" id="pizza"></div>
 
-<!-- BREAKFAST -->
 <h2>🍳 Breakfast</h2>
 <div class="grid" id="breakfast"></div>
 
@@ -191,23 +202,29 @@ margin-top:30px;
 <div class="services">
 
 <div class="service">
-<h3>🚚 Delivery</h3>
-<p>Fast delivery within 5km</p>
+<img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=60">
+<div>🚚 Delivery</div>
 </div>
 
 <div class="service">
-<h3>🏪 Pickup</h3>
-<p>Quick restaurant pickup</p>
+<img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=600&q=60">
+<div>🏪 Pickup</div>
 </div>
 
 <div class="service">
-<h3>🍽️ Reservation</h3>
-<a href="tel:0920334414"><button>Call 0920334414</button></a>
+<img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=600&q=60">
+<div>
+🍽️ Reservation<br>
+<a href="tel:0920334414"><button>Call Now</button></a>
+</div>
 </div>
 
 <div class="service">
-<h3>🌿 Frontyard Space</h3>
-<a href="tel:0920334414"><button>Call 0920334414</button></a>
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=60">
+<div>
+🌿 Frontyard Space<br>
+<a href="tel:0920334414"><button>Call Now</button></a>
+</div>
 </div>
 
 </div>
@@ -226,28 +243,30 @@ margin-top:30px;
 
 <hr>
 
-<h4>🏦 Bank Account</h4>
-100012345678<br>
+<h4>🏦 Bank</h4>
+100012345678
 <button class="copy" onclick="copy('100012345678')">Copy Bank</button>
 
 <h4>📱 Telebirr</h4>
-0920334414<br>
+0920334414
 <button class="copy" onclick="copy('0920334414')">Copy Telebirr</button>
 
 <button class="close" onclick="toggleCart()">Close Cart</button>
 
 </div>
 
+<!-- FOOTER -->
 <footer>
-📍 Addis Ababa | Powered by Addis Power
+📍 Addis Ababa | 
+<a href="https://addispowerwebsolution.pages.dev/" target="_blank">
+Developer: Addis Power
+</a>
 </footer>
 
 <script>
 
-/* ===== FULL MENU ===== */
+/* MENU FULL */
 const menu = [
-
-/* ETHIOPIAN */
 {name:"Quiet",price:370},
 {name:"Yebeg tibes",price:600},
 {name:"Yebeg kikil",price:420},
@@ -262,44 +281,34 @@ const menu = [
 {name:"Pasta besgega",price:270},
 {name:"Rice besega",price:280},
 
-/* BURGERS */
 {name:"Normal Burger",price:420},
 {name:"Cheese Burger",price:470},
-{name:"Wubet Special Burger",price:500},
 {name:"Club Sandwich",price:470},
-{name:"Egg Sandwich",price:220},
-{name:"Chips",price:160},
-{name:"Double Burger",price:700},
-{name:"Tuna Sandwich",price:300},
 
-/* PIZZA */
 {name:"Special Pizza",price:850},
-{name:"Beef Pizza",price:670},
 {name:"Chicken Pizza",price:700},
-{name:"Veg Pizza",price:600},
-{name:"Fetira Egg",price:360},
-{name:"Fetira Honey",price:360},
-{name:"Fetira Honey & Egg",price:400},
 
-/* BREAKFAST */
 {name:"Kinche",price:180},
 {name:"Ful",price:190},
-{name:"Egg Firfir",price:200},
-{name:"Special Ful",price:200},
-{name:"Scrambled Eggs",price:220}
-
+{name:"Egg Firfir",price:200}
 ];
 
 let cart=[];
 
-/* IMAGE SYSTEM */
-function img(name){
-return "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=600&q=60";
+/* VARIED FOOD IMAGES */
+function img(){
+const imgs=[
+"https://images.unsplash.com/photo-1550547660-d9450f859349",
+"https://images.unsplash.com/photo-1600891964599-f61ba0e24092",
+"https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+"https://images.unsplash.com/photo-1540189549336-e6e99c3679fe",
+"https://images.unsplash.com/photo-1606755962773-d324e0a13086"
+];
+return imgs[Math.floor(Math.random()*imgs.length)]+"?auto=format&fit=crop&w=600&q=60";
 }
 
 /* LOAD MENU */
 function load(){
-
 let e=document.getElementById("ethiopian");
 let b=document.getElementById("burgers");
 let p=document.getElementById("pizza");
@@ -308,7 +317,7 @@ let br=document.getElementById("breakfast");
 menu.forEach((m,i)=>{
 let card=`
 <div class="card">
-<img src="${img(m.name)}">
+<img src="${img()}">
 <div class="card-body">
 <h4>${m.name}</h4>
 <div class="price">${m.price} ETB</div>
@@ -317,14 +326,14 @@ let card=`
 </div>
 `;
 
-/* DISTRIBUTE */
 if(i<13)e.innerHTML+=card;
-else if(i<21)b.innerHTML+=card;
-else if(i<29)p.innerHTML+=card;
+else if(i<16)b.innerHTML+=card;
+else if(i<18)p.innerHTML+=card;
 else br.innerHTML+=card;
 });
 }
 
+/* CART */
 function add(i){
 cart.push(menu[i]);
 update();
@@ -333,23 +342,24 @@ update();
 function update(){
 document.getElementById("count").innerText=cart.length;
 
-let total=0;
-
+let t=0;
 document.getElementById("items").innerHTML=
 cart.map(c=>{
-total+=c.price;
+t+=c.price;
 return `<div>${c.name} - ${c.price} ETB</div>`;
 }).join("");
 
-document.getElementById("total").innerText=total;
+document.getElementById("total").innerText=t;
 }
 
+/* TOGGLE */
 function toggleCart(){
 document.getElementById("cart").classList.toggle("open");
 document.getElementById("overlay").style.display=
 document.getElementById("cart").classList.contains("open")?"block":"none";
 }
 
+/* COPY */
 function copy(t){
 navigator.clipboard.writeText(t);
 alert("Copied: "+t);
